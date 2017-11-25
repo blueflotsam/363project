@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        int BLife = 100;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+        public drainBattery()
+        {
+            if (BLife > 20)
+                BLife--;
+            else if (BLife>0)
+            {
+                //LowBattery=true or displayBatteryWarning()
+                BLife--;
+            }
+            //setting battery image
+            if(BLife>80)
+            {
+               pictureBox1.Image = Image.FromFile("100%.png");
+            }
+            else if (BLife > 60)
+            {
+                pictureBox1.Image = Image.FromFile("80%.png");
+            }
+            else if (BLife > 40)
+            {
+                pictureBox1.Image = Image.FromFile("60%.png");
+            }
+            else if (BLife > 20)
+            {
+                pictureBox1.Image = Image.FromFile("40%.png");
+            }
+            else
+            {
+                pictureBox1.Image = Image.FromFile("low.png");
+            }
+        }
+    }
+}
