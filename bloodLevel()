@@ -1,0 +1,24 @@
+    public int bloodLevel()
+    {
+        Random rand = new Random();
+        int level = rand.Next(100);
+        //normal blood sugar level
+        if(level>20)
+        {
+            level = rand.Next(30);
+            level += 70;
+        }
+        //high blood sugar level
+        else if (level<0)
+        {
+            level = rand.Next(800);
+            level += 100;
+        }
+        //low blood sugar level
+        else
+        {
+            level = rand.Next(40);
+            level += 30;
+        }
+        return level;
+    }
